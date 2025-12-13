@@ -3,14 +3,14 @@ nohup: ignoring input
 > health-scheduler-ai@1.0.0 dev
 > concurrently "npm run dev:server" "npm run dev:client"
 
-[0] 
-[0] > health-scheduler-ai@1.0.0 dev:server
-[0] > nodemon server/index.js
-[0] 
 [1] 
 [1] > health-scheduler-ai@1.0.0 dev:client
 [1] > vite
 [1] 
+[0] 
+[0] > health-scheduler-ai@1.0.0 dev:server
+[0] > nodemon server/index.js
+[0] 
 [0] [33m[nodemon] 3.1.11[39m
 [0] [33m[nodemon] to restart at any time, enter `rs`[39m
 [0] [33m[nodemon] watching path(s): *.*[39m
@@ -19,7 +19,7 @@ nohup: ignoring input
 [0] [32m[nodemon] restarting due to changes...[39m
 [0] [32m[nodemon] starting `node server/index.js`[39m
 [1] 
-[1]   VITE v5.4.21  ready in 253 ms
+[1]   VITE v5.4.21  ready in 242 ms
 [1] 
 [1]   ➜  Local:   http://localhost:3002/
 [1]   ➜  Network: use --host to expose
@@ -50,3 +50,10 @@ nohup: ignoring input
 [0] 
 [0] Node.js v22.13.0
 [0] [31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[1] [vite:css] @import must precede all other statements (besides @charset or empty @layer)
+[1] 3  |  @tailwind utilities;
+[1] 4  |  
+[1] 5  |  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+[1]    |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1] 6  |  
+[1] 7  |  :root {
