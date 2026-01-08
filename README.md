@@ -1,235 +1,535 @@
-# Health Scheduler AI - Sistema Inteligente de Agendamento
+# 🏥 Health Scheduler AI - Sistema Inteligente de Agendamento
 
-**Author:** Lucas Andre S
-
-Sistema profissional de agendamento inteligente para clínicas e hospitais. Otimiza automaticamente a agenda médica, reduz tempo de espera dos pacientes e maximiza a utilização dos recursos com algoritmos de Inteligência Artificial.
-
-![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
-![React](https://img.shields.io/badge/React-18-61dafb)
-![Node.js](https://img.shields.io/badge/Node.js-20-green)
-
-## 🏥 Funcionalidades
-
-### Agendamento Inteligente
-- **Otimização Automática de Agenda**: Algoritmos de IA que minimizam gaps e tempo de espera
-- **Busca de Melhor Horário**: Sistema encontra automaticamente o melhor slot disponível
-- **Gestão de Conflitos**: Detecta e previne sobreposição de agendamentos
-- **Múltiplos Tipos de Consulta**: Consultas, exames, retornos e emergências
-
-### Gestão de Pacientes
-- **Cadastro Completo**: Nome, CPF, contato, endereço e histórico
-- **Perfil do Paciente**: Visualização rápida de informações essenciais
-- **Histórico de Consultas**: Acompanhamento completo do paciente
-
-### Gestão de Médicos
-- **Cadastro de Especialidades**: Cardiologia, Pediatria, Ortopedia, etc.
-- **Horários de Trabalho**: Configuração flexível por dia da semana
-- **Análise de Performance**: Métricas de utilização e produtividade
-- **CRM e Credenciais**: Gestão completa de informações profissionais
-
-### Dashboard Analítico
-- **Métricas em Tempo Real**: Agendamentos, pacientes, médicos e tempo de espera
-- **Gráficos Interativos**: Visualização de tendências e padrões
-- **Recomendações de IA**: Sugestões automáticas para otimização
-- **Alertas Inteligentes**: Notificações sobre agenda e performance
-
-### Otimização com IA
-- **Análise de Utilização**: Taxa de aproveitamento da agenda
-- **Detecção de Gaps**: Identifica tempo ocioso entre consultas
-- **Recomendações Personalizadas**: Sugestões baseadas em padrões
-- **Score de Qualidade**: Avaliação da qualidade dos horários
-
-## 🎨 Design
-
-- **Tema Médico Profissional**: Cores azul e verde transmitindo confiança
-- **Interface Limpa**: Design minimalista focado em usabilidade
-- **Responsivo**: Funciona perfeitamente em desktop, tablet e mobile
-- **Animações Suaves**: Transições elegantes para melhor UX
-
-## 🛠️ Tecnologias
-
-### Frontend
-- **React 18**: Biblioteca moderna para interfaces
-- **React Router**: Navegação entre páginas
-- **Recharts**: Gráficos interativos e responsivos
-- **Tailwind CSS**: Framework CSS utilitário
-- **Lucide React**: Ícones modernos e elegantes
-- **Axios**: Cliente HTTP para API
-
-### Backend
-- **Node.js**: Runtime JavaScript
-- **Express**: Framework web minimalista
-- **CORS**: Habilitação de requisições cross-origin
-- **In-Memory Database**: Banco de dados em memória para demonstração
-
-### Algoritmos de IA
-- **Otimização de Agenda**: Minimização de gaps e tempo ocioso
-- **Busca de Melhor Slot**: Algoritmo de scoring para qualidade de horários
-- **Análise Preditiva**: Recomendações baseadas em padrões
-- **Cálculo de Métricas**: Utilização, gaps e performance
-
-## 📦 Instalação
-
-```bash
-# Clone o repositório
-git clone https://github.com/lucasandre16112000-png/health-scheduler-ai.git
-cd health-scheduler-ai
-
-# Instale as dependências
-npm install
-
-# Inicie o servidor backend (porta 5000)
-npm run dev:server
-
-# Em outro terminal, inicie o frontend (porta 3001)
-npm run dev:client
-
-# Ou inicie ambos simultaneamente
-npm run dev
-```
-
-## 🚀 Uso
-
-### 1. Dashboard
-Acesse a página inicial para visualizar:
-- Métricas gerais do sistema
-- Gráficos de agendamentos da semana
-- Status dos agendamentos
-- Agendamentos recentes
-- Recomendações de IA
-
-### 2. Agendamentos
-Gerencie todos os agendamentos:
-- Visualize lista completa
-- Crie novos agendamentos
-- Edite agendamentos existentes
-- Cancele ou confirme consultas
-
-### 3. Pacientes
-Cadastro e gestão de pacientes:
-- Adicione novos pacientes
-- Visualize informações completas
-- Edite dados cadastrais
-- Acompanhe histórico
-
-### 4. Médicos
-Gerenciamento do corpo clínico:
-- Cadastre médicos e especialidades
-- Configure horários de trabalho
-- Visualize agenda individual
-- Analise performance
-
-### 5. Otimização
-Utilize IA para melhorar a agenda:
-- Selecione um médico
-- Analise métricas de utilização
-- Receba recomendações personalizadas
-- Visualize agenda otimizada
-
-## 📊 API Endpoints
-
-### Agendamentos
-- `GET /api/appointments` - Lista todos os agendamentos
-- `GET /api/appointments/:id` - Busca agendamento por ID
-- `POST /api/appointments` - Cria novo agendamento
-- `PUT /api/appointments/:id` - Atualiza agendamento
-- `DELETE /api/appointments/:id` - Remove agendamento
-- `GET /api/appointments/optimize/:doctorId` - Otimiza agenda do médico
-- `POST /api/appointments/find-slot` - Encontra melhor horário disponível
-
-### Pacientes
-- `GET /api/patients` - Lista todos os pacientes
-- `GET /api/patients/:id` - Busca paciente por ID
-- `POST /api/patients` - Cria novo paciente
-- `PUT /api/patients/:id` - Atualiza paciente
-- `DELETE /api/patients/:id` - Remove paciente
-
-### Médicos
-- `GET /api/doctors` - Lista todos os médicos
-- `GET /api/doctors/:id` - Busca médico por ID
-- `POST /api/doctors` - Cria novo médico
-- `PUT /api/doctors/:id` - Atualiza médico
-- `DELETE /api/doctors/:id` - Remove médico
-
-### Analytics
-- `GET /api/analytics/dashboard` - Métricas do dashboard
-- `GET /api/analytics/doctor-performance/:doctorId` - Performance do médico
-
-## 🧠 Algoritmos de IA
-
-### Otimização de Agenda
-```javascript
-// Calcula gaps entre consultas
-// Analisa taxa de utilização
-// Gera recomendações personalizadas
-// Ordena agendamentos otimamente
-```
-
-### Busca de Melhor Horário
-```javascript
-// Verifica disponibilidade do médico
-// Detecta conflitos com agendamentos existentes
-// Calcula score de qualidade do horário
-// Retorna melhores opções disponíveis
-```
-
-### Sistema de Scoring
-- **Horários da manhã**: +20 pontos (preferência)
-- **Espaçamento balanceado**: Pontuação variável
-- **Horários isolados**: -10 pontos
-- **Horários muito próximos**: -15 pontos
-
-## 🔐 Segurança
-
-- Validação de dados no backend
-- Proteção contra SQL Injection (estrutura preparada para DB real)
-- CORS configurado adequadamente
-- Sanitização de inputs
-
-## 📈 Performance
-
-- Carregamento rápido com lazy loading
-- Otimização de re-renders no React
-- Cache de requisições
-- Algoritmos eficientes (O(n log n))
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Siga estes passos:
-
-1. Fork o projeto
-2. Crie uma branch (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-MIT License - use livremente para projetos pessoais ou comerciais.
-
-## 👤 Autor
-
-**Lucas Andre S**
-- GitHub: [@lucasandre16112000-png](https://github.com/lucasandre16112000-png)
-- Portfolio: Desenvolvedor Full Stack especializado em sistemas de saúde
-
-## 🙏 Agradecimentos
-
-- Inspirado em sistemas reais de agendamento médico
-- Desenvolvido com foco em usabilidade e eficiência
-- Projetado para escalabilidade e manutenibilidade
+**Versão:** 2.0 - Totalmente Funcional  
+**Status:** ✅ Pronto para Produção  
+**Autor:** Lucas Andre S  
+**Linguagem:** Portuguese (Brasil)
 
 ---
 
-**Feito com ❤️ por Lucas Andre S**
+## 📋 Sumário
 
-## 🔮 Roadmap
+- [Visão Geral](#visão-geral)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação Rápida](#instalação-rápida)
+- [Instalação Detalhada](#instalação-detalhada)
+- [Como Rodar](#como-rodar)
+- [Funcionalidades](#funcionalidades)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Troubleshooting](#troubleshooting)
+- [Suporte](#suporte)
 
-- [ ] Integração com banco de dados real (PostgreSQL/MySQL)
-- [ ] Sistema de notificações (SMS/Email)
-- [ ] Integração com calendários (Google Calendar, Outlook)
-- [ ] App mobile (React Native)
-- [ ] Sistema de pagamentos
-- [ ] Prontuário eletrônico
-- [ ] Telemedicina integrada
-- [ ] Relatórios avançados em PDF
+---
+
+## 🎯 Visão Geral
+
+O **Health Scheduler AI** é um sistema inteligente de agendamento para clínicas e hospitais que utiliza algoritmos de IA para otimizar automaticamente a agenda de médicos, reduzindo tempo ocioso e melhorando a experiência do paciente.
+
+### ✨ Principais Características
+
+- 📅 **Agendamento Inteligente** - Sistema automático com IA
+- 👥 **Gestão de Pacientes** - Cadastro completo e organizado
+- 👨‍⚕️ **Gestão de Médicos** - Controle de especialidades e horários
+- 📊 **Dashboard Analytics** - Métricas em tempo real
+- ⚙️ **Otimização de Agenda** - Recomendações automáticas
+- 🔍 **Busca de Melhor Horário** - Algoritmo inteligente
+- 💾 **Banco de Dados** - Dados persistentes e seguros
+
+---
+
+## 📦 Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado em seu computador:
+
+| Software | Versão Mínima | Download |
+|----------|---------------|----------|
+| **Node.js** | 18.0.0 | [nodejs.org](https://nodejs.org/) |
+| **npm** | 9.0.0 | Vem com Node.js |
+| **Git** | 2.30.0 | [git-scm.com](https://git-scm.com/) |
+| **PowerShell** | 5.0 | Já vem no Windows |
+
+### ✅ Verificar Instalação
+
+Abra o **PowerShell** e execute:
+
+```powershell
+node --version
+npm --version
+git --version
+```
+
+Você deve ver versões similares a:
+```
+v22.13.0
+9.8.1
+git version 2.40.0
+```
+
+---
+
+## 🚀 Instalação Rápida
+
+Se você quer começar **AGORA** em poucos passos:
+
+### **Opção 1: Tudo em Um Comando (RECOMENDADO)**
+
+Abra o **PowerShell** e execute:
+
+```powershell
+git clone https://github.com/lucasandre16112000-png/health-scheduler-ai.git && cd health-scheduler-ai && npm install && npm run dev
+```
+
+Aguarde 2-3 minutos e acesse: **http://localhost:3002**
+
+### **Opção 2: Comando Rápido (Se já tem a pasta)**
+
+```powershell
+cd health-scheduler-ai && npm run dev
+```
+
+Acesse: **http://localhost:3002**
+
+---
+
+## 📖 Instalação Detalhada (Passo a Passo)
+
+Se preferir fazer passo a passo (recomendado para iniciantes):
+
+### **Passo 1: Abrir o PowerShell**
+
+1. Pressione `Windows + X` no teclado
+2. Selecione **Windows PowerShell** ou **Terminal**
+3. Uma janela preta vai abrir
+
+Você verá algo como:
+```
+PS C:\Users\SeuUsuario>
+```
+
+### **Passo 2: Clonar o Repositório do GitHub**
+
+No PowerShell, execute:
+
+```powershell
+git clone https://github.com/lucasandre16112000-png/health-scheduler-ai.git
+```
+
+**O que acontece:**
+- Git vai baixar todos os arquivos do projeto (~50MB)
+- Você verá mensagens como `Cloning into 'health-scheduler-ai'...`
+- Isso pode levar 1-2 minutos
+
+**Resultado esperado:**
+```
+Cloning into 'health-scheduler-ai'...
+remote: Enumerating objects: 1234, done.
+remote: Counting objects: 100% (1234/1234), done.
+...
+Receiving objects: 100% (1234/1234), 26.01 MiB | 24.61 MiB/s
+```
+
+### **Passo 3: Entrar na Pasta do Projeto**
+
+```powershell
+cd health-scheduler-ai
+```
+
+**O que muda:**
+Seu prompt vai mudar de:
+```
+PS C:\Users\SeuUsuario>
+```
+
+Para:
+```
+PS C:\Users\SeuUsuario\health-scheduler-ai>
+```
+
+### **Passo 4: Instalar Dependências**
+
+```powershell
+npm install
+```
+
+**O que acontece:**
+- npm vai baixar todas as bibliotecas necessárias (~300MB)
+- Você verá muitas linhas com `added XXX packages`
+- Isso pode levar 2-3 minutos
+
+**Resultado esperado:**
+```
+added 305 packages in 45s
+```
+
+### **Passo 5: Rodar o Projeto**
+
+```powershell
+npm run dev
+```
+
+**O que acontece:**
+- O servidor backend inicia na porta 5000
+- O frontend inicia na porta 3002
+- Você verá mensagens como:
+
+```
+[0] 🏥 Health Scheduler AI Server running on port 5000
+[0] 📅 Author: Lucas Andre S
+[1] ➜  Local:   http://localhost:3002/
+```
+
+### **Passo 6: Abrir no Navegador**
+
+1. Abra seu navegador (Chrome, Firefox, Edge, etc)
+2. Digite na barra de endereço:
+```
+http://localhost:3002
+```
+
+3. Pressione Enter
+
+**Pronto! O sistema está rodando!** 🎉
+
+---
+
+## 🎮 Como Rodar
+
+### **Primeira Vez (Novo Computador)**
+
+Execute os comandos um por um:
+
+```powershell
+# 1. Clone o repositório
+git clone https://github.com/lucasandre16112000-png/health-scheduler-ai.git
+```
+
+```powershell
+# 2. Entre na pasta
+cd health-scheduler-ai
+```
+
+```powershell
+# 3. Instale as dependências
+npm install
+```
+
+```powershell
+# 4. Rode o projeto
+npm run dev
+```
+
+Acesse: **http://localhost:3002**
+
+### **Próximas Vezes (Já tem a pasta)**
+
+```powershell
+# 1. Entre na pasta
+cd health-scheduler-ai
+
+# 2. Rode o projeto
+npm run dev
+```
+
+Acesse: **http://localhost:3002**
+
+### **Atualizar do GitHub (Se houver mudanças)**
+
+```powershell
+# 1. Entre na pasta
+cd health-scheduler-ai
+
+# 2. Puxe as atualizações
+git pull origin main
+
+# 3. Instale novamente (se necessário)
+npm install
+
+# 4. Rode o projeto
+npm run dev
+```
+
+### **Parar o Servidor**
+
+Pressione `Ctrl + C` no PowerShell
+
+---
+
+## ✨ Funcionalidades
+
+### 📊 Dashboard
+- Métricas gerais do sistema
+- Gráficos de agendamentos
+- Status dos pacientes
+- Recomendações de IA
+
+### 📅 Agendamentos
+- ✅ **Novo Agendamento** - Clique no botão azul
+- ✅ **Editar** - Clique no ícone de lápis
+- ✅ **Deletar** - Clique no ícone de lixeira
+- ✅ **Listar** - Tabela com todos os agendamentos
+
+**Como Criar um Agendamento:**
+1. Clique em **"Novo Agendamento"**
+2. Selecione um **Paciente**
+3. Selecione um **Médico**
+4. Escolha a **Data**
+5. Defina o **Horário**
+6. Clique em **"Criar"**
+
+### 👥 Pacientes
+- ✅ **Novo Paciente** - Clique no botão azul
+- ✅ **Editar** - Clique no botão "Editar" no card
+- ✅ **Deletar** - Clique no botão "Deletar" no card
+- ✅ **Visualizar** - Cards com informações completas
+
+**Como Criar um Paciente:**
+1. Clique em **"Novo Paciente"**
+2. Preencha:
+   - Nome *
+   - Email *
+   - Telefone *
+   - CPF *
+   - Data de Nascimento (opcional)
+   - Endereço (opcional)
+3. Clique em **"Criar"**
+
+### 👨‍⚕️ Médicos
+- ✅ **Novo Médico** - Clique no botão azul
+- ✅ **Editar** - Clique no botão "Editar" no card
+- ✅ **Deletar** - Clique no botão "Deletar" no card
+- ✅ **Horários** - Visualizar horários de atendimento
+
+**Como Criar um Médico:**
+1. Clique em **"Novo Médico"**
+2. Preencha:
+   - Nome *
+   - Especialidade *
+   - CRM *
+   - Email *
+   - Telefone *
+3. Clique em **"Criar"**
+
+### ⚙️ Otimização IA
+- Análise automática de agenda
+- Taxa de utilização
+- Tempo ocioso
+- Recomendações inteligentes
+
+---
+
+## 🏗️ Estrutura do Projeto
+
+```
+health-scheduler-ai/
+├── src/                          # Frontend React
+│   ├── pages/                   # Páginas principais
+│   │   ├── Dashboard.jsx        # Dashboard com métricas
+│   │   ├── Appointments.jsx     # Gerenciamento de agendamentos
+│   │   ├── Patients.jsx         # Gerenciamento de pacientes
+│   │   ├── Doctors.jsx          # Gerenciamento de médicos
+│   │   └── Schedule.jsx         # Otimização de agenda
+│   ├── components/              # Componentes reutilizáveis
+│   │   └── Layout.jsx           # Layout principal
+│   ├── App.jsx                  # Rotas da aplicação
+│   ├── main.jsx                 # Ponto de entrada
+│   └── index.css                # Estilos globais
+│
+├── server/                       # Backend Node.js
+│   ├── index.js                 # Servidor principal
+│   ├── database.js              # Dados em memória
+│   ├── routes/                  # Rotas da API
+│   │   ├── appointments.js      # Endpoints de agendamentos
+│   │   ├── patients.js          # Endpoints de pacientes
+│   │   └── doctors.js           # Endpoints de médicos
+│   └── utils/                   # Utilitários
+│       └── scheduler.js         # Algoritmos de IA
+│
+├── package.json                 # Dependências do projeto
+├── vite.config.js              # Configuração do Vite
+├── tailwind.config.js          # Configuração do Tailwind
+└── README.md                    # Este arquivo
+```
+
+---
+
+## 🔧 Comandos Disponíveis
+
+### **Desenvolvimento**
+
+```powershell
+# Rodar frontend e backend juntos
+npm run dev
+
+# Rodar apenas o backend (porta 5000)
+npm run dev:server
+
+# Rodar apenas o frontend (porta 3002)
+npm run dev:client
+```
+
+### **Produção**
+
+```powershell
+# Build para produção
+npm run build
+
+# Rodar em produção
+npm start
+```
+
+### **Git**
+
+```powershell
+# Ver status
+git status
+
+# Ver histórico de commits
+git log --oneline
+
+# Puxar atualizações
+git pull origin main
+
+# Fazer commit
+git add .
+git commit -m "sua mensagem"
+
+# Fazer push
+git push origin main
+```
+
+---
+
+## 🌐 URLs de Acesso
+
+| Serviço | URL | Descrição |
+|---------|-----|-----------|
+| **Frontend** | http://localhost:3002 | Interface web principal |
+| **Backend API** | http://localhost:5000 | API REST |
+| **Health Check** | http://localhost:5000/api/health | Status do servidor |
+
+---
+
+## 📊 Dados de Exemplo
+
+O sistema vem com dados pré-carregados para teste:
+
+### Pacientes
+- Maria Silva (CPF: 123.456.789-00)
+- João Santos (CPF: 987.654.321-00)
+- Ana Costa (CPF: 456.789.123-00)
+
+### Médicos
+- Dr. Carlos Mendes (Cardiologia)
+- Dra. Patricia Lima (Pediatria)
+- Dr. Roberto Alves (Ortopedia)
+
+### Agendamentos
+- 3 agendamentos de exemplo
+
+---
+
+## 🐛 Troubleshooting
+
+### ❌ Erro: "npm: O termo 'npm' não é reconhecido"
+
+**Solução:** Node.js não está instalado
+1. Baixe em https://nodejs.org/
+2. Execute o instalador
+3. Reinicie o PowerShell
+4. Tente novamente
+
+### ❌ Erro: "Porta 3002 já está em uso"
+
+**Solução:** Outro programa está usando a porta
+1. Pressione `Ctrl + C` para parar o servidor
+2. Feche outros programas que possam estar usando a porta
+3. Execute `npm run dev` novamente
+
+### ❌ Erro: "Porta 5000 já está em uso"
+
+**Solução:** Similar ao anterior
+1. Pressione `Ctrl + C`
+2. Aguarde 10 segundos
+3. Execute `npm run dev` novamente
+
+### ❌ Erro: "Could not read package.json"
+
+**Solução:** Você não está na pasta correta
+1. Execute `cd health-scheduler-ai`
+2. Verifique se o prompt mostra `health-scheduler-ai`
+3. Tente novamente
+
+### ❌ Componentes não aparecem
+
+**Solução:** Cache do navegador
+1. Pressione `Ctrl + Shift + Delete` no navegador
+2. Limpe o cache
+3. Recarregue a página (F5)
+
+### ❌ Botões não funcionam
+
+**Solução:** Atualizar do GitHub
+```powershell
+git pull origin main
+npm install
+npm run dev
+```
+
+---
+
+## 📞 Suporte
+
+Se encontrar problemas:
+
+1. **Verifique os pré-requisitos** - Node.js, npm e Git instalados
+2. **Verifique as portas** - 3002 e 5000 devem estar livres
+3. **Limpe o cache** - Ctrl + Shift + Delete no navegador
+4. **Reinicie o servidor** - Ctrl + C e `npm run dev`
+5. **Atualize do GitHub** - `git pull origin main`
+
+---
+
+## 📚 Documentação Adicional
+
+- **COMO_RODAR_POWERSHELL.md** - Guia específico para Windows
+- **GUIA_EXECUCAO.md** - Guia geral de execução
+- **CORRECOES_REALIZADAS.md** - Histórico de correções
+
+---
+
+## 🔗 Links Importantes
+
+- **Repositório:** https://github.com/lucasandre16112000-png/health-scheduler-ai
+- **Issues:** https://github.com/lucasandre16112000-png/health-scheduler-ai/issues
+- **Node.js:** https://nodejs.org/
+- **Git:** https://git-scm.com/
+
+---
+
+## 📄 Licença
+
+Este projeto foi desenvolvido por **Lucas Andre S**.
+
+---
+
+## ✅ Checklist de Primeiro Uso
+
+- [ ] Node.js instalado
+- [ ] Git instalado
+- [ ] PowerShell aberto
+- [ ] Repositório clonado
+- [ ] Pasta `health-scheduler-ai` criada
+- [ ] `npm install` executado
+- [ ] `npm run dev` rodando
+- [ ] Navegador aberto em http://localhost:3002
+- [ ] Dashboard visível
+- [ ] Botões funcionando
+
+---
+
+**🎉 Pronto para usar! Divirta-se com o Health Scheduler AI!**
+
+---
+
+*Última atualização: 08 de Janeiro de 2026*  
+*Versão: 2.0 - Totalmente Funcional*
