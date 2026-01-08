@@ -44,11 +44,11 @@ export function findBestTimeSlot(doctorId, date, duration) {
   );
   
   // Get doctor's working hours for this day
-  const dayOfWeek = new Date(date).toLocaleDateString('en-US', { weekday: 'lowercase' });
+  const dayOfWeek = new Date(date).toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
   const workingHours = doctor.workingHours[dayOfWeek] || [];
   
   if (workingHours.length === 0) {
-    return { available: false, message: 'Doctor not available on this day' };
+    return { available: false, message: 'Doctor not available on this day', date, dayOfWeek };
   }
   
   // Find available slots
