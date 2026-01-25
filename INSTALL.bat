@@ -61,7 +61,8 @@ if errorlevel 1 goto error_install
 echo [OK] Dependencies installed
 echo.
 
-REM Step 7: Start servers
+REM Step 7: Start servers and wait for them to be ready
+echo [7/7] Starting servers...
 echo.
 echo ================================================================================
 echo.
@@ -74,16 +75,39 @@ echo.
 echo ================================================================================
 echo.
 
-timeout /t 5 /nobreak >nul
+REM Start npm dev in background
+start "Health Scheduler AI" cmd /k "cd /d %installPath% && npm run dev"
 
-start http://localhost:3002
+REM Wait for server to be ready (check port 3002)
+echo Waiting for server to start (this may take 30 seconds)...
+set "counter=0"
+:wait_loop
+timeout /t 1 /nobreak >nul
+set /a counter+=1
+netstat -ano | findstr ":3002" >nul 2>&1
+if errorlevel 1 (
+    if %counter% lss 60 (
+        echo Waiting... %counter%/60
+        goto wait_loop
+    ) else (
+        echo Server took too long to start
+        goto wait_error
+    )
+) else (
+    echo Server is ready!
+)
 
+REM Wait a bit more to ensure everything is fully loaded
 timeout /t 3 /nobreak >nul
 
-call npm run dev
+REM Open browser
+start http://localhost:3002
 
 echo.
-echo [INFO] Servers stopped
+echo [OK] Application is running!
+echo [OK] Browser should open automatically
+echo.
+echo To stop the application, close the command window or press Ctrl+C
 echo.
 pause
 exit /b 0
@@ -112,6 +136,14 @@ echo   cd %installPath%
 echo   del package-lock.json
 echo   rmdir /s /q node_modules
 echo   npm install
+echo.
+pause
+exit /b 1
+
+:wait_error
+echo.
+echo [ERROR] Server failed to start
+echo Check if ports 3002 and 5000 are available
 echo.
 pause
 exit /b 1
